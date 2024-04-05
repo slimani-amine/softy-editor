@@ -1,5 +1,6 @@
-import Button from '@/components/Button';
+// import Button from '@/components/Button';
 import useAuthStore from '@/store/useAuthStore';
+import { Button } from '../ui/button';
 
 const Header = () => {
   const { isAuthenticated, setIsAuthenticated } = useAuthStore(
@@ -14,7 +15,7 @@ const Header = () => {
             <div>
               <a href="#" className="flex items-center py-4 px-2">
                 <span className="font-semibold text-gray-500 text-lg">
-                  Boilerplate
+                  Softy-Editor
                 </span>
               </a>
             </div>
@@ -36,12 +37,14 @@ const Header = () => {
             </a>
             {isAuthenticated && (
               <Button
-                text="Logout"
+                // text="Logout"
                 className="py-3 px-3 font-medium text-white text-xs bg-blue-500 rounded hover:bg-blue-400 transition duration-300"
                 onClick={() => {
                   setIsAuthenticated(false);
                 }}
-              />
+              >
+                Logout
+              </Button>
             )}
           </div>
           <div className="md:hidden flex items-center">

@@ -3,6 +3,13 @@ import useDebounce from '@/hooks/useDebounce';
 import { formatDate } from '@/lib/helper';
 import { useArticlesQuery } from '@/services/queries/article.query';
 import { type Article } from '@/types/article';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '../../components/ui/accordion';
+import { Input } from '@/components/ui/input';
 
 export type Filter = { page: number; search?: string };
 
@@ -109,12 +116,10 @@ const Articles = () => {
       <div className="flex justify-center w-full">
         <div className="mb-3 xl:w-[40%]">
           <div className="input-group relative flex flex-wrap items-stretch w-full mb-4">
-            <input
+            <Input
               type="search"
-              className="form-control relative flex-auto min-w-0 block w-auto mr-2 px-3 py-2 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              className="rounded-xl"
               placeholder="Enter search term"
-              aria-label="Search"
-              aria-describedby="button-addon3"
               onChange={(e) => {
                 setSearchTerm(e.target.value);
               }}
@@ -123,11 +128,12 @@ const Articles = () => {
         </div>
       </div>
       <div className="flex flex-wrap -mx-1 lg:-mx-4">
-        {isLoading ? (
+        {/* {isLoading ? (
           <div>Loading...</div>
-        ) : (
-          <ArticleList articles={data?.results ?? []} />
-        )}
+        ) : ( */}
+        {/* <ArticleList articles={data?.results ?? []} /> */}
+
+        {/* )} */}
       </div>
     </div>
   );
